@@ -27,7 +27,7 @@ app.get('/api/health', (_, res) => res.json({ status: 'ok', app: 'BiteDash API' 
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  🍕 BiteDash API`);
-  console.log(`  ➜ Port ${PORT} | ${process.env.NODE_ENV}\n`);
+  console.log(`  ➜ Port ${PORT} | ${process.env.NODE_ENV || 'development'}\n`);
 });
